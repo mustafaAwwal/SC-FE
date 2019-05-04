@@ -18,6 +18,7 @@ import { HeaderComponent } from './Components/UI/header/header.component';
 import { ProfileMainComponent } from './Components/profile-pages/profile-main/profile-main.component';
 import { MediaLibraryComponent } from './Components/profile-pages/media-library/media-library.component';
 import { VideoCardComponent } from './Components/reusableComponent/video-card/video-card.component';
+import { FileUploaderComponent } from './Components/reusableComponent/file-uploader/file-uploader.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +29,13 @@ import { VideoCardComponent } from './Components/reusableComponent/video-card/vi
     LoginComponent,
     ProfileMainComponent,
     MediaLibraryComponent,
-    VideoCardComponent
+    VideoCardComponent,
+    FileUploaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
