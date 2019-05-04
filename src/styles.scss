@@ -21,3 +21,14 @@
 .btn-primary:focus {
     box-shadow: 0 0 10px #008000 !important;
 }
+
+.boxedInformation {
+    border-radius: 5px;
+    box-shadow: 0 0 2px green;
+    padding: 30px;
+}
+
+.headingsInfo {
+    color: green;
+    font-weight: 500;
+}

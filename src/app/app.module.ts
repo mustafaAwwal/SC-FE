@@ -16,6 +16,8 @@ import { HeaderComponent } from './Components/UI/header/header.component';
 
 //Profile Pages
 import { ProfileMainComponent } from './Components/profile-pages/profile-main/profile-main.component';
+import { MediaLibraryComponent } from './Components/profile-pages/media-library/media-library.component';
+import { VideoCardComponent } from './Components/reusableComponent/video-card/video-card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ProfileMainComponent } from './Components/profile-pages/profile-main/pr
     HeaderComponent,
     SignupComponent,
     LoginComponent,
-    ProfileMainComponent
+    ProfileMainComponent,
+    MediaLibraryComponent,
+    VideoCardComponent
   ],
   imports: [
     BrowserModule,

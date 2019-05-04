@@ -8,15 +8,16 @@ import { SignupComponent } from './Components/Pages/signup/signup.component';
 
 //Profile Pages
 import { ProfileMainComponent } from './Components/profile-pages/profile-main/profile-main.component';
-
+import { MediaLibraryComponent } from './Components/profile-pages/media-library/media-library.component';
 
 const routes : Routes = [
     {path: '', component: LandingPageComponent},
     {path: 'signup', component: SignupComponent},
     {path: 'login', component: LoginComponent},
 
-    {path: 'profile', children: [
-        {path: 'main', component: ProfileMainComponent}
+    {path: 'teacher', children: [
+        {path: 'main', component: ProfileMainComponent},
+        {path: 'medialibrary', component: MediaLibraryComponent}
     ]}
 ]
 

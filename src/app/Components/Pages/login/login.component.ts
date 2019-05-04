@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   loginDataHandler(email,password) {
     console.log(email);
     console.log(password);
-    this.router.navigate(['profile','main'])
+    this.router.navigate(['teacher','main'])
   }
 
 }
