@@ -1,0 +1,22 @@
+<form action="">
+    <div class="form-group">
+        <label for="#topic">Topic for the video</label>
+        <input type="text" class="form-control" placeholder="Enter the topic of the lecture" name="topic" #topic id="topic">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="#video">Upload Video: {{imageProgress}}</label>
+        </div>
+        <div class="form-group col-md-6">
+            <a class="btn-primary" (click)="video.click()">Choose File</a>
+            <input type="file" id="video" #video ng2FileSelect [uploader]="uploader"/>
+            <div class="incorrect">{{validityStatement}} </div>
+        </div>
+    </div>
+    <a class="btn btn-primary" (click)="videoDataHandler(topic.value)">Upload to Database</a>
+</form>
+
+
+
+
+

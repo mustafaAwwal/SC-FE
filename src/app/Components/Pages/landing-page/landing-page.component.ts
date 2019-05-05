@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServicesService,video } from '../../../../services/dataservices/data-services.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -6,22 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
-  videos = [{
-    videoSource: "https://res.cloudinary.com/do9bwaox0/video/upload/v1556956400/videos/WIN_20190504_00_51_05_Pro.mp4",
-    teacherName: "Sir Mudassir",
-    subject: "FOCP",
-    topic: "fundamentals"
-    },
-    {
-      videoSource: "https://res.cloudinary.com/do9bwaox0/video/upload/v1556956400/videos/WIN_20190504_00_51_05_Pro.mp4",
-      teacherName: "Sir Mudassir",
-      subject: "FOCP",
-      topic: "fundamentals"
-    }
-  ]
-  constructor() { }
+  videos : video[];
+  constructor(private dService: DataServicesService) { 
+    this.getVideos();
+  }
 
   ngOnInit() {
+  }
+
+  getVideos() {
+    this.dService.getVideos().subscribe((value)=>{
+      this.videos = value.videos;
+    })
   }
 
 }

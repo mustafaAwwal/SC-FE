@@ -1,6 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing';
+import * as  cloudinary from 'cloudinary-core';
+import cloudinaryConfiguration from '../environments/config';
+import {Cloudinary,CloudinaryModule, CloudinaryConfiguration, provideCloudinary} from '@cloudinary/angular-5.x';
+import {FileUploadModule} from 'ng2-file-upload';
+import { HttpClientModule } from '@angular/common/http';
+import { DataServicesService } from '../services/dataservices/data-services.service';
+
 
 
 import { AppComponent } from './app.component';
@@ -19,6 +26,7 @@ import { ProfileMainComponent } from './Components/profile-pages/profile-main/pr
 import { MediaLibraryComponent } from './Components/profile-pages/media-library/media-library.component';
 import { VideoCardComponent } from './Components/reusableComponent/video-card/video-card.component';
 import { FileUploaderComponent } from './Components/reusableComponent/file-uploader/file-uploader.component';
+import { AdminPanelComponent } from './Components/profile-pages/admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +38,16 @@ import { FileUploaderComponent } from './Components/reusableComponent/file-uploa
     ProfileMainComponent,
     MediaLibraryComponent,
     VideoCardComponent,
-    FileUploaderComponent
+    FileUploaderComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CloudinaryModule.forRoot(cloudinary, cloudinaryConfiguration as CloudinaryConfiguration),
+    FileUploadModule,
+    HttpClientModule,
+
     ],
   providers: [],
   bootstrap: [AppComponent]

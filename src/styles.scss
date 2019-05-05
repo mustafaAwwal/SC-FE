@@ -21,6 +21,9 @@
 .btn-primary:focus {
     box-shadow: 0 0 10px #008000 !important;
 }
+.btn-primary:hover {
+    cursor: pointer;
+}
 
 .boxedInformation {
     border-radius: 5px;

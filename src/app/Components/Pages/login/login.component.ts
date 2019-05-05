@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { loginData, DataServicesService } from '../../../../services/dataservices/data-services.service' 
 
 
 @Component({
@@ -8,8 +9,9 @@ import { Router } from '@angular/router'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private router: Router) {
+  login: loginData;
+  massage = "";
+  constructor(private router: Router,private dservice: DataServicesService) {
     
    }
 
@@ -17,9 +19,21 @@ export class LoginComponent implements OnInit {
   }
 
   loginDataHandler(email,password) {
-    console.log(email);
-    console.log(password);
-    this.router.navigate(['teacher','main'])
+    this.login = {
+      emailAddress: email,
+      password: password
+    }
+    this.dservice.loginUser(this.login).subscribe((value)=>{
+      if(value.accountType != "wrong" || value.accountType === "completely wrong"){
+          localStorage.setItem("accountType",value.accountType)
+          localStorage.setItem("teacherId",value.id)
+          localStorage.setItem("username",value.username)
+          this.router.navigate(['teacher','main'])
+      }
+      else {
+        this.massage = "wrong information"
+      }
+    });
   }
 
 }

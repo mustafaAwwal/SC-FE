@@ -9,6 +9,7 @@ import { SignupComponent } from './Components/Pages/signup/signup.component';
 //Profile Pages
 import { ProfileMainComponent } from './Components/profile-pages/profile-main/profile-main.component';
 import { MediaLibraryComponent } from './Components/profile-pages/media-library/media-library.component';
+import { AdminPanelComponent} from './Components/profile-pages/admin-panel/admin-panel.component';
 
 const routes : Routes = [
     {path: '', component: LandingPageComponent},
@@ -18,7 +19,8 @@ const routes : Routes = [
     {path: 'teacher', children: [
         {path: 'main', component: ProfileMainComponent},
         {path: 'medialibrary', component: MediaLibraryComponent}
-    ]}
+    ]},
+    {path: 'admin', component: AdminPanelComponent}
 ]
 
 @NgModule ({

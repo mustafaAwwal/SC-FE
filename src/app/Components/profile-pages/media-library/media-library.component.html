@@ -1,14 +1,25 @@
 <div class="container boxedInformation" >
-  <div class="headingArea">
-    <h2>Media Library</h2>
-    <button class="btn btn-primary">Upload Video</button>
+  <div *ngIf="!showForm">
+    <div class="headingArea">
+        <h2>Media Library</h2>
+        <button class="btn btn-primary" (click)="showFormHandler()">Upload Video</button>
+      </div>
+      <hr>
+      <div class="row">
+            <div class="col-lg-6 col-md-12" *ngFor="let video of videos">
+                    <app-video-card [videoSource]="video.videoUrl" [teacherName]="video.teacherName" [topic]="video.topic" [subject]="video.subject"></app-video-card>
+            </div>
+            
+      </div>
   </div>
-  <hr>
-  <div class="row">
-        <div class="col-lg-6 col-md-12" *ngFor="let video of videos">
-                <app-video-card [videoSource]="video.videoSource" [teacherName]="video.teacherName" [topic]="video.topic" [subject]="video.subject"></app-video-card>
-        </div>
-       
-  </div>
+  
+    
+  <app-file-uploader *ngIf="showForm"></app-file-uploader>
+  
+  
+  <a class="btn-primary goBackButton" *ngIf="showForm" (click)="showFormHandler()">Go Back</a>
+
 </div>
-<app-file-uploader></app-file-uploader>
+
+
+

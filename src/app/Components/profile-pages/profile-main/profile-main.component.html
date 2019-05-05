@@ -1,9 +1,13 @@
 <div class="container boxedInformation">
     <h2>Information</h2>
     <hr>
-    <p><span class="headingsInfo">Name: </span>Rauf Balocj</p>
-    <p><span class="headingsInfo">Email: </span>mabalooch@gmail.com</p>
-    <p><span class="headingsInfo">Account Type: </span>Teacher</p>
-    <p><span class="headingsInfo">Subject: </span>Professional Ethics</p>
+    <p><span class="headingsInfo">Name: </span>{{userInformation.username}}</p>
+    <p><span class="headingsInfo">Email: </span>{{userInformation.emailAddress}}</p>
+    <p><span class="headingsInfo">Account Type: </span>{{userInformation.accountType}}</p>
+    <p><span class="headingsInfo">Subject: </span>{{userInformation.subject}}</p>
+    <div *ngIf="isTeacher()">
+        <hr>
+        <a class="btn btn-primary" routerLink="/teacher/medialibrary">Go to Media mediaLibrary</a>
+    </div>
     
 </div>

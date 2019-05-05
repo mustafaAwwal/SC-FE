@@ -15,10 +15,10 @@ export class VideoCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.subject);
-    console.log(this.videoSource);
-    console.log(this.topic);
-    console.log(this.subject);
+    // console.log(this.subject);
+    // console.log(this.videoSource);
+    // console.log(this.topic);
+    // console.log(this.subject);
 
   }
 
