@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
       password: password
     }
     this.dservice.loginUser(this.login).subscribe((value)=>{
-      if(value.accountType != "wrong" || value.accountType === "completely wrong"){
+      console.log(value);
+      if(value.username){
           localStorage.setItem("accountType",value.accountType)
           localStorage.setItem("teacherId",value.id)
           localStorage.setItem("username",value.username)
