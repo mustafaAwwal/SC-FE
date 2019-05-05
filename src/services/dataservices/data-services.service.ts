@@ -56,6 +56,19 @@ export interface videoInformationSent {
   subject: any
 }
 
+export interface usersDataAdmin {
+  users: user[]
+}
+
+export interface user {
+  _id: any,
+  accountType: any,
+  subject: any,
+  username: any,
+  emailAddress: any
+
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -96,6 +109,11 @@ export class DataServicesService {
     let id = localStorage.getItem("teacherId");
     let url = BEurl +"/video/user/" + id;
     return this.http.get<videoRecieve>(url); 
+  }
+
+  getUsersForAdmin(): Observable<usersDataAdmin> {
+    let url = BEurl + "/user"
+    return this.http.get<usersDataAdmin>(url);
   }
 
 }

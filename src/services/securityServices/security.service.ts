@@ -31,4 +31,13 @@ export class SecurityService {
     }
   }
 
+  isAdmin():boolean {
+    if(localStorage.getItem("accountType")==="admin"){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
 }

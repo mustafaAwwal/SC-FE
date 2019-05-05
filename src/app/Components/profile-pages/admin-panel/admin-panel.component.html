@@ -5,53 +5,37 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">No.of Students</th>
-          <th scope="col">No.of Teachers</th>
+          <th scope="col">No.of Registered Users</th>
           <th scope="col">No.Of Videos</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>43</td>
-          <td>65</td>
-          <td>98</td>
+          <td>{{userLength}}</td>
+          <td>{{videoLength}}</td>
         </tr>
       </tbody>
     </table>
     <hr>
-    <h4>Registered Teachers</h4>
+    <h4>Registered Users</h4>
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Name</th>
+          <th scope="col">AccountType</th>
           <th scope="col">Subject</th>
-          <th scope="col">Videos</th>
+          <th scope="col">Email Address</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>43</td>
-          <td>65</td>
-          <td>98</td>
+        <tr *ngFor = "let usr of user">
+          <td>{{usr.username}}</td>
+          <td>{{usr.accountType}}</td>
+          <td>{{usr.subject}}</td>
+          <td>{{usr.emailAddress}}</td>
         </tr>
       </tbody>
     </table>
-    <hr>
-    <h4>Registered Students</h4>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Subject</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>43</td>
-          <td>65</td>
-        </tr>
-      </tbody>
-    </table>
-    
+   
 </div>
 

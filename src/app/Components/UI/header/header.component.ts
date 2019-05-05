@@ -22,4 +22,7 @@ export class HeaderComponent implements OnInit {
     this.isLogin();
     this.router.navigate(['']);
   }
+  isAdmin():boolean{
+    return this.sService.isAdmin();
+  }
 }

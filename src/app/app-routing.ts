@@ -11,16 +11,19 @@ import { ProfileMainComponent } from './Components/profile-pages/profile-main/pr
 import { MediaLibraryComponent } from './Components/profile-pages/media-library/media-library.component';
 import { AdminPanelComponent} from './Components/profile-pages/admin-panel/admin-panel.component';
 
+//Auth guard service
+import { AuthguardService } from '../services/authguard/authguard.service';
+
 const routes : Routes = [
     {path: '', component: LandingPageComponent},
     {path: 'signup', component: SignupComponent},
     {path: 'login', component: LoginComponent},
 
     {path: 'teacher', children: [
-        {path: 'main', component: ProfileMainComponent},
-        {path: 'medialibrary', component: MediaLibraryComponent}
-    ]},
-    {path: 'admin', component: AdminPanelComponent}
+        {path: 'main', component: ProfileMainComponent, canActivate: [AuthguardService]},
+        {path: 'medialibrary', component: MediaLibraryComponent, canActivate: [AuthguardService]}
+    ], canActivate: [AuthguardService]},
+    {path: 'admin', component: AdminPanelComponent, canActivate: [AuthguardService]}
 ]
 
 @NgModule ({

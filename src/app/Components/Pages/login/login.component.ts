@@ -28,7 +28,12 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("accountType",value.accountType)
           localStorage.setItem("teacherId",value.id)
           localStorage.setItem("username",value.username)
-          this.router.navigate(['teacher','main'])
+          if(value.accountType == "admin"){
+            this.router.navigate(['admin'])
+          }
+          else {
+            this.router.navigate(['teacher','main'])
+          }
       }
       else {
         this.massage = "wrong information"
